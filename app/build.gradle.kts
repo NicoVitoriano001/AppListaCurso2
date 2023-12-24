@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace = "devandroid.nico.applistacurso2"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "devandroid.nico.applistacurso2"
-        minSdk = 24
-        targetSdk = 33
+        minSdk = 22 //required minimum SDK for Clover apps
+        targetSdk = 34 //API level used for testing
         versionCode = 1
         versionName = "1.0"
 
