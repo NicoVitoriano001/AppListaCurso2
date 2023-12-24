@@ -8,7 +8,7 @@ public class Pessoa {  //classe com Letra maiúscula - pascalCase, camelCase
     // métodos de acesso (gets and sets), pois são privados, no mainActivity não aparece se estiver privado
 
     private String primeiroNome; //criado atributo - ctrl+D copia
-    private String sobreNOme; //criado atributo, mas tem que ter método para deixar de ser privado
+    private String sobreNome; //criado atributo, mas tem que ter método para deixar de ser privado
     private String cursoDesejado;
     private String telefoneContato; //criado atributo, para criar métodos de acesso getter and setter,
     // após do public Pessoa, botao direito, Generate, selecionar tudo
@@ -24,16 +24,12 @@ public class Pessoa {  //classe com Letra maiúscula - pascalCase, camelCase
         this.primeiroNome = primeiroNome;
     }
 
-
-
-
-
-    public String getSobreNOme() {
-        return sobreNOme;
+    public String getSobreNome() {
+        return sobreNome;
     }
 
-    public void setSobreNOme(String sobreNOme) {
-        this.sobreNOme = sobreNOme;
+    public void setSobreNome(String sobreNome) {
+        this.sobreNome = sobreNome;
     }
 
     public String getCursoDesejado() {
@@ -51,4 +47,5 @@ public class Pessoa {  //classe com Letra maiúscula - pascalCase, camelCase
     public void setTelefoneContato(String telefoneContato) {
         this.telefoneContato = telefoneContato;
     }
+
 }
