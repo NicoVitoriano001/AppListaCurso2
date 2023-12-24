@@ -1,6 +1,7 @@
 package devandroid.nico.applistacurso2.view;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,15 +13,10 @@ import devandroid.nico.applistacurso2.R;
 import devandroid.nico.applistacurso2.model.Pessoa;
 
 
-
-
 public class MainActivity extends AppCompatActivity {
 
     Pessoa pessoa; //marcou objeto pessoa para Classe Pessoa(foi com mesmo nome, mas pode ser diferente)
     Pessoa outraPessoa;
-    String dadosPessoa;
-    String dadosOutraPessoa;
-
     EditText editPrimeiroNome;
     EditText editSobrenomeAluno;
     EditText editNomeCurso;
@@ -52,17 +48,14 @@ public class MainActivity extends AppCompatActivity {
         editNomeCurso = findViewById(R.id.editNomeCurso);
         editTelefoneContato = findViewById(R.id.editTelefoneContato);
 
-
         btnLimpar = findViewById(R.id.btnLimpar);
         btnSalvar = findViewById(R.id.btnSalvar);
         btnFinalizar = findViewById(R.id.btnFinalizar);
-
 
         editPrimeiroNome.setText(pessoa.getPrimeiroNome());
         editSobrenomeAluno.setText(pessoa.getSobreNome());
         editNomeCurso.setText(pessoa.getCursoDesejado());
         editTelefoneContato.setText(pessoa.getTelefoneContato());
-
 
         btnLimpar.setOnClickListener(new View.OnClickListener() { //teve que criar/new uma instancia dentro do onclicklistener
             @Override  //tostring lembra???
@@ -77,24 +70,19 @@ public class MainActivity extends AppCompatActivity {
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 finish();
                 Toast.makeText(MainActivity.this, "Volte Sempre", Toast.LENGTH_LONG).show();
-
             }
         });
 
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 pessoa.setPrimeiroNome(editPrimeiroNome.getText().toString());
                 pessoa.setSobreNome(editSobrenomeAluno.getText().toString());
                 pessoa.setCursoDesejado(editNomeCurso.getText().toString());
                 pessoa.setTelefoneContato(editTelefoneContato.getText().toString());
-
-                Toast.makeText(MainActivity.this, "Salvo "+pessoa.toString(), Toast.LENGTH_LONG).show();
-
+                Toast.makeText(MainActivity.this, "Salvo " + pessoa.toString(), Toast.LENGTH_LONG).show();
             }
         });
 
@@ -121,14 +109,13 @@ public class MainActivity extends AppCompatActivity {
         Log.i("POOAndroid", outraPessoa.toString());
 
 
-       // Obtém a data e hora atuais
-       //     Date dataHoraAtual = new Date();
-    // Formata a data e hora atuais
-      //      SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-       //     String dataHoraFormatada = sdf.format(dataHoraAtual);
-    // Exibe a data e hora atuais no toast
-       //     Toast.makeText(this, dataHoraFormatada, Toast.LENGTH_SHORT).show();
-
+        // Obtém a data e hora atuais
+        //     Date dataHoraAtual = new Date();
+        // Formata a data e hora atuais
+        //      SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        //     String dataHoraFormatada = sdf.format(dataHoraAtual);
+        // Exibe a data e hora atuais no toast
+        //     Toast.makeText(this, dataHoraFormatada, Toast.LENGTH_SHORT).show();
 
 
     }
