@@ -5,9 +5,9 @@
     <string name="txt_hint_edit_sobrenome">Sobrenome</string>
     <string name="txt_hint_edit_nome_do_curso">Nome do Curso Desejado</string>
     <string name="txt_hint_edit_telefone_contato">Telefone de Contato</string>
-    <string name="txt_button_limpar"></string>
-    <string name="txt_button_salvar"></string>
-    <string name="txt_button_finalizar"></string>
+    <string name="txt_button_limpar">LIMPAR</string>
+    <string name="txt_button_salvar">SALVAR</string>
+    <string name="txt_button_finalizar">FINALIZAR</string>
 
 
 </resources>
