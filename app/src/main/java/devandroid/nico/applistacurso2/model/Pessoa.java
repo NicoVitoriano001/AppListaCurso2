@@ -3,7 +3,6 @@ package devandroid.nico.applistacurso2.model;
 
 public class Pessoa {  //classe com Letra maiúscula - pascalCase, camelCase
 
-    // para cada objeto tem que haver construtor. AndroidStudio facilita exe: public Pessoa (){}
     // atributos/metodo usar camelCase
     // métodos de acesso (gets and sets), pois são privados, no mainActivity não aparece se estiver privado
 
@@ -14,9 +13,10 @@ public class Pessoa {  //classe com Letra maiúscula - pascalCase, camelCase
     // após do public Pessoa, botao direito, Generate, selecionar tudo
 
     public Pessoa() { //na Structure, Pessoal() é o método construtor
+        // para cada objeto tem que haver construtor. AndroidStudio facilita exe: public Pessoa (){}
     }
 
-    public String getPrimeiroNome() { //na Structure, Pessoal() é o método de acesso getter and setter
+    public String getPrimeiroNome() { //na Structure, Pessoa() é o método de acesso getter and setter
         return primeiroNome;
     }
 
@@ -46,6 +46,18 @@ public class Pessoa {  //classe com Letra maiúscula - pascalCase, camelCase
 
     public void setTelefoneContato(String telefoneContato) {
         this.telefoneContato = telefoneContato;
+    }
+
+
+    //To String - para textos ou para strings de caracteres.
+    // para adicionar tostr > wizard    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "primeiroNome='" + primeiroNome + '\'' +
+                ", sobreNome='" + sobreNome + '\'' +
+                ", cursoDesejado='" + cursoDesejado + '\'' +
+                ", telefoneContato='" + telefoneContato + '\'' +
+                '}';
     }
 
 }
