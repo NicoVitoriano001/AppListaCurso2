@@ -77,10 +77,11 @@
         app:layout_constraintTop_toBottomOf="@+id/editTelefoneContato"
         app:layout_constraintVertical_bias="0.844" />
 
-    <Button android:id="@+id/btnSalvar"
+    <Button
+        android:id="@+id/btnSalvar"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="112dp"
         android:layout_marginBottom="48dp"
         android:text="SALVAR"
         app:layout_constraintBottom_toTopOf="@+id/btnFinalizar"

@@ -2,6 +2,7 @@ package devandroid.nico.applistacurso2.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,6 +16,9 @@ import devandroid.nico.applistacurso2.model.Pessoa;
 
 
 public class MainActivity extends AppCompatActivity {
+    //SharedPreferences preferences; //add para criar no emulador arquivo temporário para salvar dados
+    //depois vai no onCreate e criou psfs abaixo(public static final string)
+   // public static final String NOME_PREFERENCES = "pref_listavip";//nome do arquivo
 
     PessoaController controller;//ligar Controller com a View MainActivy. Fazer news no onCreate para criar objeto/instânciar
     Pessoa pessoa; //marcou objeto pessoa para Classe Pessoa(foi com mesmo nome, mas pode ser diferente)
@@ -33,10 +37,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+     //   preferences = getSharedPreferences(NOME_PREFERENCES,0);//ANALISAR > SharedPreferences preferences = getSharedPreferences("meu_arquivo", Context.MODE_PRIVATE);
+        //SharedPreferences preferences = getSharedPreferences(NOME_PREFERENCES,0);
+
+      //  SharedPreferences.Editor listaVip = preferences.edit(); //criar arquivo listaVip para salvar e recuperar informações
+
         controller = new PessoaController();
 
         pessoa = new Pessoa(); //instanciou o objeto pessoa na Classe Pessoa
-      /*  pessoa.setPrimeiroNome("Nico"); //variável pessoa para chamar o método setPrimeiroNome(). atribuir dados/valores para o objeto pessoa
+        /*pessoa.setPrimeiroNome("Nico"); //variável pessoa para chamar o método setPrimeiroNome(). atribuir dados/valores para o objeto pessoa
         pessoa.setSobreNome("Vit");
         pessoa.setCursoDesejado("Android");
         pessoa.setTelefoneContato("11 8383838383");*/
@@ -89,13 +98,17 @@ public class MainActivity extends AppCompatActivity {
                 pessoa.setTelefoneContato(editTelefoneContato.getText().toString());
                 Toast.makeText(MainActivity.this, "Salvo " + pessoa.toString(), Toast.LENGTH_LONG).show();
 
-            controller.salvar(pessoa);//aqui na view, forcei a criação do método salvar no Controller, pois lá não tinha.
+               /* listaVip.putString("primeiroNome", pessoa.getPrimeiroNome());
+                listaVip.putString("sobreNome", pessoa.getSobreNome());
+                listaVip.putString("cursoDesejado", pessoa.getCursoDesejado());
+                listaVip.putString("telefoneContato", pessoa.getTelefoneContato());
+
+                listaVip.apply();*/
+
+                controller.salvar(pessoa);//aqui na view, forcei a criação do método salvar no Controller, pois lá não tinha.
                 // ao criar o método na controladora, estava assim aqui na view (controller.salvar();),
                 // no entanto, devo passar o que deve ser salvo pelo método criado na controller, fica assim controller.salvar(pessoa);
                 //ou seja, vai ser salvo pelo método salvar o objeto pessoa, para fazer isso, clicar em pessoa (controller.salvar(pessoa);) e adicionar o primeiro param para o método salvar
-
-
-
             }
         });
 
