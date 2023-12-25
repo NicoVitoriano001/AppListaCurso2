@@ -10,11 +10,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import devandroid.nico.applistacurso2.R;
+import devandroid.nico.applistacurso2.controller.PessoaController;
 import devandroid.nico.applistacurso2.model.Pessoa;
 
 
 public class MainActivity extends AppCompatActivity {
 
+    PessoaController controller;//ligar Controller com a View MainActivy. Fazer news no onCreate para criar objeto/instânciar
     Pessoa pessoa; //marcou objeto pessoa para Classe Pessoa(foi com mesmo nome, mas pode ser diferente)
     Pessoa outraPessoa;
     EditText editPrimeiroNome;
@@ -25,10 +27,13 @@ public class MainActivity extends AppCompatActivity {
     Button btnSalvar;
     Button btnFinalizar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        controller = new PessoaController();
 
         pessoa = new Pessoa(); //instanciou o objeto pessoa na Classe Pessoa
       /*  pessoa.setPrimeiroNome("Nico"); //variável pessoa para chamar o método setPrimeiroNome(). atribuir dados/valores para o objeto pessoa
@@ -83,6 +88,14 @@ public class MainActivity extends AppCompatActivity {
                 pessoa.setCursoDesejado(editNomeCurso.getText().toString());
                 pessoa.setTelefoneContato(editTelefoneContato.getText().toString());
                 Toast.makeText(MainActivity.this, "Salvo " + pessoa.toString(), Toast.LENGTH_LONG).show();
+
+            controller.salvar(pessoa);//aqui na view, forcei a criação do método salvar no Controller, pois lá não tinha.
+                // ao criar o método na controladora, estava assim aqui na view (controller.salvar();),
+                // no entanto, devo passar o que deve ser salvo pelo método criado na controller, fica assim controller.salvar(pessoa);
+                //ou seja, vai ser salvo pelo método salvar o objeto pessoa, para fazer isso, clicar em pessoa (controller.salvar(pessoa);) e adicionar o primeiro param para o método salvar
+
+
+
             }
         });
 
